@@ -12,7 +12,7 @@ var Botkit= require('botkit'),
     watson = require('watson-developer-cloud');
 
 var controller = Botkit.glipbot({
-    debug: false,
+    debug: false
 });
 
 var bot = controller.spawn({
@@ -21,13 +21,19 @@ var bot = controller.spawn({
     appSecret: process.env.GLIP_APPSECRET,
     username: process.env.GLIP_USERNAME,
     password: process.env.GLIP_PASSWORD,
-    extension: process.env.GLIP_EXTENSION,
+    extension: process.env.GLIP_EXTENSION
 }).startRTM();
 
 controller.setupWebserver(process.env.port || 3000, function(err, webserver){
+
+    if(!err){
+        console.log('error' + err);
+    }
+
     webserver.get('/', function (req ,res) {
         res.send(':)');
     });
+
 
     controller.createWebhookEndpoints(webserver, bot);
 
