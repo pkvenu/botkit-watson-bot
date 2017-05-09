@@ -22,5 +22,8 @@
     "chatbot"
   ],
   "author": "pawan.venugopal@ringcentral.com",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "^2.13.1"
+  }
 }

@@ -7,4 +7,5 @@ before_install:
 before_script:
   - npm install
   - npm install -g standard
-
+# Send coverage data to Coveralls
+after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
