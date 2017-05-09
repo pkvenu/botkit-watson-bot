@@ -1,6 +1,14 @@
 language: node_js
-
-# test on two node.js versions: 0.6 and 0.8
+sudo: required
+cache:
+   directories:
+     - node_modules
 node_js:
-  - 0.6
-  - 0.8
+  - 6
+before_install:
+  - npm install -g node-gyp
+before_script:
+  - npm install
+  - npm install -g standard
+  - sleep 3
+
