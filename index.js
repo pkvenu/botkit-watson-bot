@@ -51,7 +51,7 @@ controller.hears(['watson: analyze'], 'message_received', function (bot,message)
     bot.api.posts().get({groupId: message.channel}).then(function(history) {
 
         var messages = [];
-        for(var i=0; i <history.records.length; i++){
+        for(var i=0; i < history.records.length; i++){
             messages.push(history.records[i].text);
         }
 
